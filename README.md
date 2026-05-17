@@ -30,7 +30,7 @@ dates_generator/
 |---|-------|------|------|
 | 1 | Conditional GAN | In-course (required) | `gan_model.py` |
 | 2 | Conditional VAE | In-course | `vae_model.py` |
-| 3 | 1D CNN | Out-of-course | `cnn_model.py` |
+| 3 | VQN | Out-of-course | `cnn_model.py` |
 | 4 | Transformer Encoder | Out-of-course | `transformer_model.py` |
 
 ## Setup
@@ -51,8 +51,8 @@ python model/train.py --model gan --epochs 80 --batch_size 512
 # Model 2 – VAE (in-course)
 python model/train.py --model vae --epochs 60 --batch_size 512
 
-# Model 3 – CNN (out-of-course)
-python model/train.py --model cnn --epochs 60 --batch_size 512
+# Model 3 – VQN (out-of-course)
+python model/train.py --model VQN --epochs 60 --batch_size 512
 
 # Model 4 – Transformer (out-of-course)
 python model/train.py --model transformer --epochs 60 --batch_size 512
