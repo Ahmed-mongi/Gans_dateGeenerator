@@ -10,7 +10,7 @@ dates_generator/
 ├── model/
 │   ├── gan_model.py          ← Model 1 (in-course):  Conditional GAN
 │   ├── vae_model.py          ← Model 2 (in-course):  Conditional VAE
-│   ├── cnn_model.py          ← Model 3 (out-of-course): 1D CNN
+│   ├── cnn_model.py          ← Model 3 (out-of-course): VQN
 │   ├── transformer_model.py  ← Model 4 (out-of-course): Transformer Encoder
 │   ├── train.py              ← unified training script
 │   ├── predict.py            ← inference entry point (as per spec)
@@ -46,16 +46,16 @@ Run from the project root (`dates_generator/`):
 
 ```bash
 # Model 1 – GAN (in-course, required)
-python model/train.py --model gan --epochs 80 --batch_size 512
+python model/train.py --model gan --epochs 30 --batch_size 512
 
 # Model 2 – VAE (in-course)
-python model/train.py --model vae --epochs 60 --batch_size 512
+python model/train.py --model vae --epochs 30 --batch_size 512
 
 # Model 3 – VQN (out-of-course)
-python model/train.py --model VQN --epochs 60 --batch_size 512
+python model/train.py --model VQN --epochs 30 --batch_size 512
 
 # Model 4 – Transformer (out-of-course)
-python model/train.py --model transformer --epochs 60 --batch_size 512
+python model/train.py --model transformer --epochs 30 --batch_size 512
 ```
 
 Key flags:
@@ -87,7 +87,7 @@ Override which model to use:
 ```bash
 python model/predict.py -i data/example_input.txt -o predictions.txt --model gan
 python model/predict.py -i data/example_input.txt -o predictions.txt --model vae
-python model/predict.py -i data/example_input.txt -o predictions.txt --model cnn
+python model/predict.py -i data/example_input.txt -o predictions.txt --model VQN
 python model/predict.py -i data/example_input.txt -o predictions.txt --model transformer
 ```
 
@@ -98,7 +98,7 @@ Output format matches `data.txt` exactly: each line is `[conditions] predicted_d
 ```bash
 python model/evaluate.py --model gan
 python model/evaluate.py --model vae
-python model/evaluate.py --model cnn
+python model/evaluate.py --model VQN
 python model/evaluate.py --model transformer
 ```
 
